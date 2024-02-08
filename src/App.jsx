@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
-import Articles from "./pages/Articles"
+import AllArticles from "./pages/AllArticles"
+import Article from "./pages/Article";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 
@@ -19,7 +20,7 @@ function App() {
     setError(null)
     getArticles()
     .then((articles)=>{
-      setArticles(articles.data.articles)
+      setArticles(articles)
       setIsLoading(false)
     })
     .catch((error) => {
@@ -40,7 +41,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/articles" element={<Articles articles = {articles} setArticles = {setArticles} />} />
+        <Route path="/articles" element={<AllArticles articles = {articles} setArticles = {setArticles} />} />
+        <Route path="/articles/:article_id" element={<Article/>} />
       </Routes>
     </>
   );
