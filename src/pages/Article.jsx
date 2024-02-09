@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { getArticle } from '../utils/api';
 
 import CommentCard from '../components/CommentCard'
+import CastVotes from '../components/VotingCard';
 
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
@@ -26,7 +27,7 @@ export default function Article () {
         <p>Topic: {article.topic}</p>
         <p>Author: {article.author}</p>
         <p className="articleBody" >{article.body}</p>
-        <p>Votes: {article.votes}</p>
+        <CastVotes article_id={article_id} ></CastVotes>
         <CommentCard article_id={article_id} ></CommentCard>
         </Container>
     )
