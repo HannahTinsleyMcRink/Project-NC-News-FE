@@ -23,3 +23,15 @@ export const getArticle = (article_id) => {
       return error
     });
 };
+
+export const getComments = (article_id) => {
+  return axios
+    .get(`https://hannahtm-nc-news-backend-project.onrender.com/api/articles/${article_id}/comments`)
+    .then((response) => {
+      return response.data.comments;
+    })
+    .catch((error) => {
+      console.log(error, "ERROR");
+      return error
+    });
+};
