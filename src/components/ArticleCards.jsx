@@ -8,10 +8,8 @@ export default function ArticleCards (props) {
     const {article, setArticles} = props
 
     function handleClick(event) {
-      console.log("submitted")
-      getArticles().then((articlesData)=>{
-        articlesData.map((article) => {
-        })
+      getArticles()
+      .then(()=>{
       })
     }
 

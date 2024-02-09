@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 
 import { getArticle } from '../utils/api';
 
+import CommentCard from '../components/CommentCard'
+
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 
@@ -23,8 +25,9 @@ export default function Article () {
         <h3>{article.title}</h3>
         <p>Topic: {article.topic}</p>
         <p>Author: {article.author}</p>
-        <p>{article.body}</p>
+        <p className="articleBody" >{article.body}</p>
         <p>Votes: {article.votes}</p>
+        <CommentCard article_id={article_id} ></CommentCard>
         </Container>
     )
-}
+} 

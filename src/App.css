@@ -9,3 +9,16 @@
 .card {
   padding: 2em;
 }
+
+.articleBody {
+  text-align: left;
+}
+
+.commentCard {
+  border: 1px solid black
+}
+
+.singleComment {
+  text-align: left;
+  margin-bottom: 20px;
+}
